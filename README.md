@@ -1,4 +1,16 @@
-# talented-prose-735
+NAME OF THE WESITE- BROOKSTONE, DO LIFE BETTER...
+Brookstone sells a wide assortment of products, including remote control helicopters and drones, alarm clocks and smartwatches, massage chairs, speakers, iPads and tablet accessories, blankets, pillows, and many other lifestyle items.
+
+Tech-Stack Used in Website Cloning-
+
+HTML
+CSS
+JAVASCRIPT
+EXPRESS
+MONGO DB ATLAS
+MONGOOSE
+
+
 DAY-1---
 
 WORKED ON THE LANDING PAGE OF THE WEBSITE THAT INCLUDES, NAVBAR, BODY CONTENT, AND FOOTER.
