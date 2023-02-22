@@ -8,202 +8,233 @@
     <title>Sign-In</title>
 </head>
 <style>
-    *{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-     }
- 
-
-     /* *******************************NAVBAR*************************************** */
+    * {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    }
 
 
-.navbar{
-    position: fixed;
-    width: 100%;
-   
-}
-.nav-searchbar{
-    /* position: fixed; */
+    /* *******************************NAVBAR*************************************** */
 
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 3px 5px 4px;
-    background-color: whitesmoke;
-   
-    
-}
-#logo{
-padding-left:2%;
-width: 20%;
 
-}
-#logo-image{
-    height: 8vh;
-}
-.search{
-    width: 50%;
-    display: flex;
-    /* border: 1px solid red; */
-}
-#search-input{
-    height:60%;
-    width: 90%;
-    padding: 0px 0px 0px 10px;
-    margin-top: 2%;
-    border-radius: 6px;
-    border: 2px solid lightgrey;
-    outline: none;
-}
-#search-icon{
-    height: 10%;
-}
-.cart-login{
-   
-    display: flex;
-    justify-content:right;
-    cursor: pointer;
-    width: 20%;
-    /* border: 1px solid red; */
-}
-.icon-search{
-    width: 2%;
-    height: 50px;
-    /* border: 1px solid red; */
-}
-#search-icon{
-    height: 40%;
-    margin-left: -410%;
-    margin-top: 81%;
-}
-#user-icon, #favorite-icon, #cart-icon{
-    height: 4vh;
-    margin-right: 3%;
-    margin-top: 5%;
-}
+    .navbar {
+        position: fixed;
+        width: 100%;
 
-.drop-downs{
-    z-index: 2;
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 2% 0px 2%;
-    padding-bottom: 2%;
-    /* border: 1px solid red; */
-    cursor: pointer;
-}
+    }
 
-.drop-downs p:hover{
-  text-decoration:underline
-}
+    .nav-searchbar {
+        /* position: fixed; */
 
-.massage-dropdown{
-    display: flex;
-    z-index: 4;
-    position: absolute;
-    margin-top: 8%;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-.wellness-dropdown{
-    width: 100%;
-    z-index: 4;
-    display: flex;
-    position: absolute;
-    margin-top: 8%;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-.sleep-dropdown{
-    width: 100%;
-    z-index: 4;
-    display: flex;
-    position: absolute;
-    margin-top: 8%;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
-}
-.list1{
-    width: 60%;
-    display: flex;
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 3px 5px 4px;
+        background-color: whitesmoke;
 
-}
-.list2{
-    width: 40%;
-    display: flex;
 
-}
+    }
 
-#massage-img, #foot-image{
-    margin-top: 6%;
-    width: 90%;
-}
+    #logo {
+        padding-left: 2%;
+        width: 20%;
 
-#massage-chairs, #massage-guns, #neck-back, #best-sellers{
-    margin-top: 5%;
-    margin-left: 8%;
-}
-.hidden{
-    display: none;
-}
+    }
 
-.main-body{
-    width: 100%;
-    display: flex;
-    margin-bottom: 3%;
-}
-.wakeup-slider{
-    padding-top: 8%;
-    z-index: -1;
- 
-    /* border: 1px solid red; */
-    width: 60%;
-}
-.wakeup-slider img{
-    margin-top: 0.7%;
-    cursor: pointer;
-    width: 100%;
-}
-.image-grid{
-    padding-top: 8%;
-    display: grid;
-    padding-left: 1%;
-    column-gap: 2%;
-    grid-template-columns: repeat(2,1fr);
-    /* border: 1px solid blue; */
-    width: 40%;
-}
-.image-grid img{
-    width: 100%;
-}
-.item1{
-    grid-column-start: 1;
-    grid-column-end: 3;
-   
-}
-.image-grid{
-    margin-top: 1%;
-}
+    #logo-image {
+        height: 8vh;
+    }
 
-/* *******************************body content***************************** */
-    
-    .sign-in-container{
+    .search {
+        width: 50%;
+        display: flex;
+        /* border: 1px solid red; */
+    }
+
+    #search-input {
+        height: 60%;
+        width: 90%;
+        padding: 0px 0px 0px 10px;
+        margin-top: 2%;
+        border-radius: 6px;
+        border: 2px solid lightgrey;
+        outline: none;
+    }
+
+    #search-icon {
+        height: 10%;
+    }
+
+    .cart-login {
+
+        display: flex;
+        justify-content: right;
+        cursor: pointer;
+        width: 20%;
+        /* border: 1px solid red; */
+    }
+
+    .icon-search {
+        width: 2%;
+        height: 50px;
+        /* border: 1px solid red; */
+    }
+
+    #search-icon {
+        height: 40%;
+        margin-left: -410%;
+        margin-top: 81%;
+    }
+
+    #user-icon,
+    #favorite-icon,
+    #cart-icon {
+        height: 4vh;
+        margin-right: 3%;
+        margin-top: 5%;
+    }
+
+    .drop-downs {
+        z-index: 2;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 2% 0px 2%;
+        padding-bottom: 2%;
+        /* border: 1px solid red; */
+        cursor: pointer;
+    }
+
+    .drop-downs p:hover {
+        text-decoration: underline
+    }
+
+    .massage-dropdown {
+        display: flex;
+        z-index: 4;
+        position: absolute;
+        margin-top: 8%;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .wellness-dropdown {
+        width: 100%;
+        z-index: 4;
+        display: flex;
+        position: absolute;
+        margin-top: 8%;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .sleep-dropdown {
+        width: 100%;
+        z-index: 4;
+        display: flex;
+        position: absolute;
+        margin-top: 8%;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .list1 {
+        width: 60%;
+        display: flex;
+
+    }
+
+    .list2 {
+        width: 40%;
+        display: flex;
+
+    }
+
+    #massage-img,
+    #foot-image {
+        margin-top: 6%;
+        width: 90%;
+    }
+
+    #massage-chairs,
+    #massage-guns,
+    #neck-back,
+    #best-sellers {
+        margin-top: 5%;
+        margin-left: 8%;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .main-body {
+        width: 100%;
+        display: flex;
+        margin-bottom: 3%;
+    }
+
+    .wakeup-slider {
+        padding-top: 8%;
+        z-index: -1;
+
+        /* border: 1px solid red; */
+        width: 60%;
+    }
+
+    .wakeup-slider img {
+        margin-top: 0.7%;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .image-grid {
+        padding-top: 8%;
+        display: grid;
+        padding-left: 1%;
+        column-gap: 2%;
+        grid-template-columns: repeat(2, 1fr);
+        /* border: 1px solid blue; */
+        width: 40%;
+    }
+
+    .image-grid img {
+        width: 100%;
+    }
+
+    .item1 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+
+    }
+
+    .image-grid {
+        margin-top: 1%;
+    }
+
+    /* *******************************body content***************************** */
+
+    .sign-in-container {
         padding: 3%;
     }
-    .sign-in-heading{
+
+    .sign-in-heading {
         text-align: center;
     }
+
     /* #our-brand{
         
     } */
-    .login-register{
+    .login-register {
         display: flex;
         width: 100%;
     }
-    .login{
+
+    .login {
         /* border: 1px solid red; */
         padding: 2%;
         width: 50%;
     }
-    #sign-in-btn{
+
+    #sign-in-btn {
         width: 25%;
         height: 6vh;
         letter-spacing: 4px;
@@ -211,11 +242,11 @@ width: 20%;
         color: white;
         outline: none;
         border-radius: 10px;
-        border:none;
+        border: none;
         cursor: pointer;
     }
 
-    #submit-btn{
+    #submit-btn {
         width: 25%;
         height: 6vh;
         letter-spacing: 4px;
@@ -223,87 +254,94 @@ width: 20%;
         color: black;
         outline: none;
         border-radius: 10px;
-        border:1px solid black;
+        border: 1px solid black;
         cursor: pointer;
     }
 
-    #submit-btn:hover{
+    #submit-btn:hover {
         background-color: #50514f;
         color: white;
     }
 
-    #email, #pass, #firstName, #lastName{
+    #email,
+    #pass,
+    #firstName,
+    #lastName,
+    #email-login,
+    #pass-login {
         width: 100%;
-       padding: 1%;
-       height: 4vh;
-       margin-bottom: 3%;
-       margin-top: 1%;
-       outline: none;
-       border: 1px solid lightgrey;
+        padding: 1%;
+        height: 4vh;
+        margin-bottom: 3%;
+        margin-top: 1%;
+        outline: none;
+        border: 1px solid lightgrey;
     }
 
 
-    .register{
+    .register {
         /* border: 1px solid blue; */
         margin-left: 5%;
         padding: 2%;
         width: 50%;
     }
 
-    
-/* ******************************FOOTER*************************** */
 
-.footer{
-    /* border: 2px solid red; */
-    width: 90%;
-    display: flex;
-    background-color: #50514f;
-    color: white;
-    padding: 5%;
-    padding-top: 10%;
-    z-index: -1;
+    /* ******************************FOOTER*************************** */
 
-}
+    .footer {
+        /* border: 2px solid red; */
+        width: 90%;
+        display: flex;
+        background-color: #50514f;
+        color: white;
+        padding: 5%;
+        padding-top: 10%;
+        z-index: -1;
 
-.customer-service{
-    display: flex;
-}
+    }
 
-#shop-now-image{
-    width: 70%;
-    margin-left: 20%;
-    border-radius: 10px;
-    cursor: pointer;
-}
-#sign-up-now-footer {
-    /* border: 1px solid red; */
-    height: 5vh;
-    width: 90%;
-    background-color: #65c297;
-    border-radius: 10px;
-    letter-spacing: 2px;
-    text-align: center;
-    padding-top: 5%;
-    cursor: pointer;
-}
-#contact-footer{
-    margin-left: 20%;
-    padding-top: 5%;
-}
+    .customer-service {
+        display: flex;
+    }
 
-#faq{
-    margin-left: 25%;
-    padding-top: 5%;
-}
+    #shop-now-image {
+        width: 70%;
+        margin-left: 20%;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    #sign-up-now-footer {
+        /* border: 1px solid red; */
+        height: 5vh;
+        width: 90%;
+        background-color: #65c297;
+        border-radius: 10px;
+        letter-spacing: 2px;
+        text-align: center;
+        padding-top: 5%;
+        cursor: pointer;
+    }
+
+    #contact-footer {
+        margin-left: 20%;
+        padding-top: 5%;
+    }
+
+    #faq {
+        margin-left: 25%;
+        padding-top: 5%;
+    }
 </style>
 
 <body>
     <!-- ********************************navbar*********************************** -->
-    
+
     <nav class="navbar">
- 
+
         <div class="nav-searchbar">
-         <div id="logo">
+            <div id="logo">
                 <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/brookstone-logo1_1600x.png?v=1672581852"
                     id="logo-image">
             </div>
@@ -469,31 +507,32 @@ width: 20%;
                 <h2>Login</h2>
                 <p>If you have an account, please sign in with your email address.</p>
                 <label for="email">Email</label><br>
-                <input type="text" id="email"><br>
+                <input type="text" id="email-login"><br>
                 <label for="pass">Password</label><br>
-                <input type="text" id="pass"><br>
+                <input type="text" id="pass-login"><br>
                 <button id="sign-in-btn">SIGN IN</button>
                 <p>Forget your password?</p>
             </div>
             <div class="register">
                 <h2>Create Customer</h2>
-                <p>Creating an account has many benefits: check out faster, keep more than one address, track orders and more.</p>
+                <p>Creating an account has many benefits: check out faster, keep more than one address, track orders and
+                    more.</p>
                 <label for="firstName">First Name</label><br>
                 <input type="text" id="firstName"><br>
                 <label for="lastName">Last Name</label><br>
                 <input type="text" id="lastName"><br>
                 <label for="email">Email</label><br>
                 <input type="text" id="email"><br>
-                <label for="pass">Password</label><br>
-                <input type="text" id="pass"><br>
-                <button id="submit-btn">SUBMIT</button>
+                <label for="password">Password</label><br>
+                <input type="password" id="pass"><br>
+                <button id="submit-btn" onclick="onSignUp()">SUBMIT</button>
             </div>
         </div>
     </div>
 
 
 
-    
+
     <!-- ***********************************FOOTER*************************************** -->
 
     <div class="footer">
@@ -504,7 +543,8 @@ width: 20%;
         </div>
         <div class="footer-right">
             <div class="shop-now">
-                <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/BKST_Klarna_Banner_Update_HP_Desktop_1600x.webp?v=1652916700" id="shop-now-image">
+                <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/BKST_Klarna_Banner_Update_HP_Desktop_1600x.webp?v=1652916700"
+                    id="shop-now-image">
             </div>
             <div class="customer-service">
                 <div id="faq">
@@ -532,61 +572,54 @@ width: 20%;
 </body>
 <script>
     const MassagePopup = () => {
-    document.querySelector(".massage-dropdown").classList.remove("hidden");
-}
+        document.querySelector(".massage-dropdown").classList.remove("hidden");
+    }
 
-const Massageleave = () => {
-    document.querySelector(".massage-dropdown").classList.add("hidden");
-}
+    const Massageleave = () => {
+        document.querySelector(".massage-dropdown").classList.add("hidden");
+    }
 
-const WellnessPopup = () =>{
-    document.querySelector(".wellness-dropdown").classList.remove("hidden");
-}
+    const WellnessPopup = () => {
+        document.querySelector(".wellness-dropdown").classList.remove("hidden");
+    }
 
-const Wellnessleave = () => {
-    document.querySelector(".wellness-dropdown").classList.add("hidden");
-}
+    const Wellnessleave = () => {
+        document.querySelector(".wellness-dropdown").classList.add("hidden");
+    }
 
-const SleepPopup = () => {
-    document.querySelector(".sleep-dropdown").classList.remove("hidden");
-}
-const Sleepleave = () => {
-    document.querySelector(".sleep-dropdown").classList.add("hidden");
-}
-
-$('#slick1').slick({
-    rows: 1,
-    dots: false,
-    arrows: false,
-    autoplay:true,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 1,
-    slidesToScroll: 1
-});
-
-$('#featureSlide').slick({
-    rows: 1,
-    dots: false,
-    arrows: false,
-    autoplay:true,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 3,
-    slidesToScroll: 3
-});
+    const SleepPopup = () => {
+        document.querySelector(".sleep-dropdown").classList.remove("hidden");
+    }
+    const Sleepleave = () => {
+        document.querySelector(".sleep-dropdown").classList.add("hidden");
+    }
 
 
-$('.best-sellers-slider').slick({
-    rows: 1,
-    dots: false,
-    arrows: false,
-    autoplay:true,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 5,
-    slidesToScroll: 3
-});
+    // ******************************REGISTER USER*****************************
+
+    const onSignUp = () => {
+        const payload = {
+            firstName: document.querySelector("#firstName").value,
+            lastName: document.querySelector("#lastName").value,
+            email: document.querySelector("#email").value,
+            pass: document.querySelector("#pass").value
+        }
+
+        fetch("http://localhost:8000/users/register", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(payload),
+        }).then(res => res.json())
+        .then(res => {
+            console.log(res)
+            alert(res.msg)
+        })
+        .catch((err) => console.log(err))
+      
+    }
 
 </script>
+
 </html>

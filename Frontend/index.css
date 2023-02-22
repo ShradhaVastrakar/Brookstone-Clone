@@ -6,6 +6,7 @@
 .navbar{
     position: fixed;
     width: 100%;
+   
 }
 .nav-searchbar{
     /* position: fixed; */
@@ -139,11 +140,13 @@ width: 20%;
 .wakeup-slider{
     padding-top: 8%;
     z-index: -1;
+ 
     /* border: 1px solid red; */
     width: 60%;
 }
 .wakeup-slider img{
     margin-top: 0.7%;
+    cursor: pointer;
     width: 100%;
 }
 .image-grid{
@@ -255,11 +258,15 @@ width: 80%;
 /* ******************************FOOTER*************************** */
 
 .footer{
-    width: 100%;
+    /* border: 2px solid red; */
+    width: 90%;
     display: flex;
     background-color: #50514f;
     color: white;
-    padding: 2%;
+    padding: 5%;
+    padding-top: 10%;
+    z-index: -1;
+
 }
 
 .customer-service{
@@ -267,5 +274,28 @@ width: 80%;
 }
 
 #shop-now-image{
-    width: 60%;
+    width: 70%;
+    margin-left: 20%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#sign-up-now-footer {
+    /* border: 1px solid red; */
+    height: 5vh;
+    width: 90%;
+    background-color: #65c297;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    text-align: center;
+    padding-top: 5%;
+    cursor: pointer;
+}
+#contact-footer{
+    margin-left: 20%;
+    padding-top: 5%;
+}
+
+#faq{
+    margin-left: 25%;
+    padding-top: 5%;
 }

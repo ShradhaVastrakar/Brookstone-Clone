@@ -54,3 +54,9 @@ $('.best-sellers-slider').slick({
     slidesToShow: 5,
     slidesToScroll: 3
 });
+
+
+let SignUp_Page = document.getElementById("user-icon");
+SignUp_Page.addEventListener("click",()=>{
+  window.location.href = "signIn.html";
+})
