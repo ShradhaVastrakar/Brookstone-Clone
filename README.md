@@ -3,12 +3,12 @@ Brookstone sells a wide assortment of products, including remote control helicop
 
 Tech-Stack Used in Website Cloning-
 
-HTML
-CSS
-JAVASCRIPT
-EXPRESS
-MONGO DB ATLAS
-MONGOOSE
+HTML,
+CSS,
+JAVASCRIPT,
+EXPRESS,
+MONGO DB ATLAS,
+MONGOOSE,
 
 
 DAY-1---
