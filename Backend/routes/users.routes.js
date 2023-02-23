@@ -44,17 +44,23 @@ userRouter.post("/register" ,async (req,res) => {
 
 
 userRouter.post("/login", async (req,res) => {
-    const {email,pass} = req.body;
+    const {firstName,lastName,email,pass} = req.body;
+    
     try{
 
         const user = await userModel.find({email})
+        console.log(user)
+       
+    //  
+        
         if(user){
             bcrypt.compare(pass, user[0].pass, (err, result) =>{
           
                 if(result){
+                    const name =  `${user[0]['firstName']}  ${user[0]['lastName']}`
                     const token = jwt.sign({userID: user[0]._id},"masai")
-                    res.send({"msg": "Login Successful", "token": token})
-                    localStorage.setItem("token", token);
+                    res.send({"msg": "Login Successful", "token": token , "email" :email , "name" : name})
+                   
                 }
                 else{
                     res.send({"msg": "Wrong Credentials"})
@@ -74,6 +80,7 @@ userRouter.post("/logout", (req,res) =>{
     localStorage.removeItem("token");
     res.send({"msg":"Logout Successfully"})
 })
+
 
 
 
