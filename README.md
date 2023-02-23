@@ -25,3 +25,13 @@ DAY-2---
 Worked on Login/SignUp page and same on the Frontend
 
 ![Screenshot (92)](https://user-images.githubusercontent.com/115460277/220729559-1e210cd0-2162-4df9-a185-7203d918c6e9.png)
+
+DAY-3---
+
+Worked on the Backend Register / login /logout / account page
+
+
+![Screenshot (95)](https://user-images.githubusercontent.com/115460277/220998459-6aba0344-773c-45db-811f-2cc9b38a3dfc.png)
+
+
+![Screenshot (93)](https://user-images.githubusercontent.com/115460277/220998072-3a85e11a-bb47-400a-b26e-664a591236cb.png)
