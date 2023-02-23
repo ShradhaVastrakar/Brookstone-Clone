@@ -17,7 +17,7 @@
 
 
     .navbar {
-        position: fixed;
+        /* position: fixed; */
         width: 100%;
 
     }
@@ -210,83 +210,41 @@
         margin-top: 1%;
     }
 
-    /* *******************************body content***************************** */
 
-    .sign-in-container {
-        padding: 3%;
-    }
-
-    .sign-in-heading {
-        text-align: center;
-    }
-
-    /* #our-brand{
-        
-    } */
-    .login-register {
+    /* **********************************account details**************************** */
+    .account-container {
         display: flex;
-        width: 100%;
+        justify-content: space-between;
+        width: 80%;
+        /* margin-top: 20%; */
+        /* padding:20%; */
     }
 
-    .login {
+    .home-account {
+        width: 40%;
+        padding-left: 3%;
+        padding-top: 4%;
+        /* border: 2px solid blue; */
+    }
+
+    #home-heading {
+        margin-bottom: 20%;
+    }
+
+    .my-account {
+        width: 60%;
+        /* border: 2px solid green; */
+    }
+
+    .account-details {
+        background-color: lightgray;
+        padding: 2%;
         /* border: 1px solid red; */
-        padding: 2%;
-        width: 50%;
     }
 
-    #sign-in-btn {
-        width: 25%;
-        height: 6vh;
-        letter-spacing: 4px;
-        background-color: #65c297;
-        color: white;
-        outline: none;
-        border-radius: 10px;
-        border: none;
+    #log-out {
         cursor: pointer;
     }
-
-    #submit-btn {
-        width: 25%;
-        height: 6vh;
-        letter-spacing: 4px;
-        background-color: white;
-        color: black;
-        outline: none;
-        border-radius: 10px;
-        border: 1px solid black;
-        cursor: pointer;
-    }
-
-    #submit-btn:hover {
-        background-color: #50514f;
-        color: white;
-    }
-
-    #email,
-    #pass,
-    #firstName,
-    #lastName,
-    #email-login,
-    #pass-login {
-        width: 100%;
-        padding: 1%;
-        height: 4vh;
-        margin-bottom: 3%;
-        margin-top: 1%;
-        outline: none;
-        border: 1px solid lightgrey;
-    }
-
-
-    .register {
-        /* border: 1px solid blue; */
-        margin-left: 5%;
-        padding: 2%;
-        width: 50%;
-    }
-
- 
 
     /* ******************************FOOTER*************************** */
 
@@ -504,39 +462,28 @@
     </div>
 
     <!-- ***********************************************body-content************************ -->
-    <div class="sign-in-container">
-        <div class="sign-in-heading">
-            <h3>Sign in to your account</h3>
-            <p id="our-brand">Our brand new site is live. Please create a new account to explore this experience.</p>
+  
+
+    <div class="account-container">
+        <div class="home-account">
+            <p id="home-heading">Home / Account</p>
+            <p>Contact Us</p>
+            <p>Shipping & Returns</p>
+            <p>Track Order</p>
+            <p id="log-out" onclick="onLogout()">Sign Out</p>
         </div>
-        <div class="login-register">
-            <div class="login">
-                <h2>Login</h2>
-                <p>If you have an account, please sign in with your email address.</p>
-                <label for="email">Email</label><br>
-                <input type="text" id="email-login"><br>
-                <label for="pass">Password</label><br>
-                <input type="password" id="pass-login"><br>
-                <button id="sign-in-btn" onclick="onLogin()">SIGN IN</button>
-                <p>Forget your password?</p>
+        <div class="my-account">
+            <h2>Your Account</h2>
+            <div class="account-details">
+                <h3>Customer Profile</h3>
+                <h2 id="full-name"></h2>
+                <p id="appended-email"></p>
+                <p>India</p>
             </div>
-            <div class="register">
-                <h2>Create Customer</h2>
-                <p>Creating an account has many benefits: check out faster, keep more than one address, track orders and
-                    more.</p>
-                <label for="firstName">First Name</label><br>
-                <input type="text" id="firstName"><br>
-                <label for="lastName">Last Name</label><br>
-                <input type="text" id="lastName"><br>
-                <label for="email">Email</label><br>
-                <input type="text" id="email"><br>
-                <label for="password">Password</label><br>
-                <input type="password" id="pass"><br>
-                <button id="submit-btn" onclick="onSignUp()">SUBMIT</button>
-            </div>
+            <p>Your orders</p>
+            <p>orders</p>
         </div>
     </div>
-
 
 
     <!-- ***********************************FOOTER*************************************** -->
@@ -600,67 +547,25 @@
         document.querySelector(".sleep-dropdown").classList.add("hidden");
     }
 
+ let email = document.querySelector("#appended-email")
+ email.innerHTML = localStorage.getItem("email")
 
-    // ******************************REGISTER USER*****************************
+ let name = document.querySelector("#full-name")
+ name.innerHTML = localStorage.getItem("name")
 
-    const onSignUp = () => {
-        const payload = {
-            firstName: document.querySelector("#firstName").value,
-            lastName: document.querySelector("#lastName").value,
-            email: document.querySelector("#email").value,
-            pass: document.querySelector("#pass").value
-        }
 
-        fetch("http://localhost:8000/users/register", {
-            method: "POST",
-            headers: {
-                "Content-type": "application/json"
-            },
-            body: JSON.stringify(payload),
-        }).then(res => res.json())
-            .then(res => {
-                console.log(res)
-                alert(res.msg)
-            })
-            .catch((err) => console.log(err))
-
-    }
-
-    const onLogin = () => {
-        const payload = {
-            email: document.getElementById("email-login").value,
-            pass: document.getElementById("pass-login").value
-        }
-        fetch("http://localhost:8000/users/login", {
-            method: "POST",
-            headers: {
-                "Content-type": "application/json"
-            },
-            body: JSON.stringify(payload),
-
-        }).then(res => res.json())
-            .then(res => {
-                console.log(res)
-                alert(res.msg)
-                localStorage.setItem("token", res.token)
-                localStorage.setItem("email", res.email)
-                localStorage.setItem("name", res.name)
-                localStorage.setItem("isLogin", true)
-            })
-            .catch((err) => console.log(err))
-          
-        setTimeout(() => {
-        window.location.href = "account.html"
-        },3000)
-       
-
-    }
+   const onLogout = () => {
+    window.location.href = "signIn.html"
+    localStorage.removeItem("token");
+    localStorage.removeItem("email");
+    localStorage.removeItem("name");
+    localStorage.removeItem("isLogin");
+   }
 
 let logo = document.querySelector("#logo")
-   logo.addEventListener("click", ()=>{
+logo.addEventListener("click", ()=>{
     window.location.href = "index.html"
 })
-
 
 </script>
 

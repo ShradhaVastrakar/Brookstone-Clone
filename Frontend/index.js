@@ -58,5 +58,11 @@ $('.best-sellers-slider').slick({
 
 let SignUp_Page = document.getElementById("user-icon");
 SignUp_Page.addEventListener("click",()=>{
-  window.location.href = "signIn.html";
+
+    if(localStorage.getItem("isLogin")){
+        window.location.href = "account.html"
+    }else{
+        window.location.href = "signIn.html";
+    }
+
 })
