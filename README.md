@@ -36,3 +36,11 @@ Worked on the Backend Register / login /logout / account page
 
 ![Screenshot (96)](https://user-images.githubusercontent.com/115460277/220999603-565ca160-4355-4d2f-aa2b-b0cac919e67c.png)
 
+
+
+DAY-4----
+
+Worked on the product page of the website, Created API using mongoDB and fetch the same to frontend.
+
+![Screenshot (99)](https://user-images.githubusercontent.com/115460277/221236992-b60899ff-fb65-4678-b9f9-cc539866f68c.png)
+
