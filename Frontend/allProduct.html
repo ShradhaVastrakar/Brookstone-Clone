@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Product Page</title>
+</head>
+<style>
+    .admin-main-heading {
+        color: teal;
+        text-align: center;
+    }
+
+    .main-admin-container {
+        width: 100%;
+    }
+
+    .admin-btns {
+        text-align: center;
+        /* border: 1px solid red; */
+    }
+
+    #user-btn,
+    #product-btn,
+    #logout-btn {
+        padding: 1%;
+        letter-spacing: 2px;
+        margin-right: 7%;
+        margin-top: 2%;
+        background-color: lightblue;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    /* ****************product************************* */
+
+    .main-product-container {
+        border: 1px solid red;
+        width: 100%;
+    }
+
+    #main {
+        display: flex;
+        width: 100%;
+        /* margin: auto; */
+    }
+
+    #form {
+        width: 25%;
+    }
+
+    #btn {
+        padding-top: 2%;
+        padding-left: 30%;
+        padding-bottom: 2%;
+    }
+
+    #table-container {
+        width: 70%;
+    }
+
+    #operation {
+        margin-top: 3%;
+        margin-left: 2%;
+        width: 10%;
+        height: 5vh;
+        outline: none;
+        border-radius: 7%;
+
+        /* border: 2px solid red; */
+    }
+
+    option {
+        background-color: white;
+    }
+
+    #form {
+
+        color: teal;
+        width: 50%;
+        padding: 2.5%;
+
+    }
+
+    /* .labelid{
+     
+
+    } */
+    .PostForm {
+        width: 60%;
+        height: 100vh;
+    }
+
+    #submitPost {
+        height: 5vh;
+        background-color: teal;
+        border-radius: 10px;
+        width: 81%;
+        color: white;
+        border: none;
+        margin-top: 4%;
+    }
+
+    #submitPut,
+    #submitPatch,
+    #submitDelete {
+        height: 5vh;
+        border-radius: 10px;
+        background-color: teal;
+        border: none;
+        width: 81%;
+        color: white;
+        margin-top: 4%;
+    }
+
+    #inputID,
+    #ImageInput,
+    #Description,
+    #priceInput {
+        height: 6vh;
+        width: 80%;
+        margin-bottom: 4%;
+        outline: none;
+    }
+
+    .tr {
+        border: 1px solid grey;
+        padding: 4%;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    td,
+    th {
+        padding: 1%;
+    }
+
+    #main-ID {
+
+        padding: 0px 8px;
+    }
+
+    #main-Price {
+        padding: 0px 15px;
+    }
+
+    thead {
+        background-color: lightgray;
+    }
+
+    tr:nth-child(even) {
+        background-color: lightgrey;
+    }
+
+    select {
+        background-color: cyan;
+
+    }
+
+    .admin-heading-main {
+        display: flex;
+    }
+
+    #welcome-admin {
+        margin-left: 40%;
+        color: teal;
+    }
+
+    #nav-admin {
+        cursor: pointer;
+        margin-left: 30%;
+    }
+</style>
+
+<body>
+    <h1 class="admin-main-heading">Welcome, ADMIN</h1>
+    <div class="admin-btns">
+        <button id="user-btn">See all the users</button>
+        <button id="product-btn">See all the Products</button>
+        <button id="logout-btn">Log out</button>
+    </div>
+
+
+    <div class="main-product-container">
+
+        <select name="forms" id="operation">
+            <option value="Get">GET</option>
+            <option value="Post">POST</option>
+            <option value="Put">PUT</option>
+            <option value="Patch">PATCH</option>
+            <option value="Delete">DELETE</option>
+        </select>
+
+        <div id="main">
+            <div id="form">FORM</div>
+            <div id="table-container">
+                <table border="1">
+                    <thead>
+                        <th id="main-ID">ID</th>
+                        <th>Image</th>
+                        <th>Description</th>
+                        <th id="main-Price">Price</th>
+                    </thead>
+                    <tbody id="tbody"></tbody>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+
+    let userbtn = document.getElementById("user-btn");
+    userbtn.addEventListener("click", () => {
+        window.location.href = "userPage.html"
+    })
+
+
+    let logOut = document.querySelector("#logout-btn");
+    logOut.addEventListener("click", () => {
+        window.location.href = "signIn.html"
+    })
+
+    let form = document.getElementById("form");
+
+    let operation = document.querySelector("#operation");
+    console.log(operation.value)
+
+    operation.addEventListener("change", function () {
+        if (operation.value === "Get") {
+            form.innerHTML = `FORM`
+            lfetch("http://localhost:8000/api/products")
+            .then((res) => {
+                // console.log(1);
+                res.json();
+            })
+                .then((response) => {
+                    console.log(response)
+                    // console.log(2,3,response);
+                    renderProducts(response);
+                })
+        }
+    })
+
+
+    // window.addEventListener("load", () => {
+    //     fetch("http://localhost:8000/api/products")
+    //         .then((res) => res.json())
+    //         .then((actualData) => {
+    //             // Do something with the data
+    //             console.log(actualData);
+    //             //   displayProducts(actualData)
+    //         })
+    //         .catch(error => {
+    //             console.log(error);
+    //         });
+    // })
+
+    
+function renderProducts(fullData) {
+    container.innerHTML = null;
+    fullData.map((item) => {
+        let tr = document.createElement("tr");
+        tr.setAttribute("class","tr")
+        // tr.style.border = "1px solid grey"
+        let id = document.createElement("td");
+        id.innerText = item.id;
+        let image = document.createElement("td");
+        image.innerHTML = `<img src=${item.Image}>`;
+        let desc = document.createElement("td");
+        desc.innerText = item.Description;
+        let price = document.createElement("td");
+        price.innerText = item.price;
+        tr.append(id,image, desc, price)
+        container.append(tr);
+    })
+}
+
+</script>
+
+</html>

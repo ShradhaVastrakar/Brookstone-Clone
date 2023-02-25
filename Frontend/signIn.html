@@ -339,6 +339,76 @@
         display: none;
     }
 
+/* **********************LOGIN-AS -ADMIN******************************** */
+.login-Admin{
+    margin:auto;
+    margin-top: 5%;
+    width: 30%;
+    position: absolute;
+    z-index: 4;
+    top : 5%;
+    right : 35%;
+    background-color: whitesmoke;
+    border: 1px sold lightgray;
+    height: 80vh;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+
+.cross-admin{
+    margin-left: 93%;
+    margin-top: -14%;
+    cursor: pointer;
+    
+}
+
+.login-as-admin-heading{
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    margin-top: 3%;
+    padding-top: 4%;
+    margin-bottom: 8%;
+}
+.inputOfAdmin{
+    width: 60%;
+    height: 5vh;
+    margin: 2%;
+    margin-left: 18%;
+    outline: none;
+}
+.Admin-submit{
+    width: 60%;
+    height: 6vh;
+    margin: 2%;
+    margin-left: 19%;
+    color: white;
+    background-color: teal;
+    border: none;
+    font-size: medium;
+  font-weight:600;
+  cursor: pointer;
+    border-radius: 7px;
+}
+.privacy-policy{
+margin-left: 10%;
+font-size: 14px;
+padding-bottom: 15%;
+padding-top: 5%;
+}
+
+
+    #login-as-admin{
+        width: 40%;
+        padding: 2%;
+        text-align: center;
+        border-radius: 10px;
+        background-color: #65c297;
+        color:white;
+        border: none;
+        cursor: pointer;
+        letter-spacing: 3px;
+    }
 
 </style>
 
@@ -371,7 +441,7 @@
         </div>
 
         <div class="drop-downs">
-            <p>New</p>
+            <p id="new-product-page">New</p>
             <p id="Massage" onClick={MassagePopup()} onmouseleave={Massageleave()}>Massage</p>
             <p id="Wellness" onmouseover={WellnessPopup()} onmouseleave="{Wellnessleave()}">Wellness</p>
             <p id="Sleep" onmouseover={SleepPopup()} onmouseleave="{Sleepleave()}">Sleep</p>
@@ -519,6 +589,7 @@
                 <input type="password" id="pass-login"><br>
                 <button id="sign-in-btn" onclick="onLogin()">SIGN IN</button>
                 <p>Forget your password?</p>
+                <p onclick="loginAsAdmin()" id="login-as-admin">Login as Admin</p>
             </div>
             <div class="register">
                 <h2>Create Customer</h2>
@@ -536,6 +607,18 @@
             </div>
         </div>
     </div>
+  
+    <div class="login-Admin hidden">
+        <div class="login-as-admin-heading">LOG-IN AS ADMIN</div>
+        <p class="cross-admin" onClick={Admincross()}>x</p>
+        <input type="text" placeholder="Enter Username" class="inputOfAdmin" id="adminName"><br>
+        <input type="password" placeholder="Enter Password" class="inputOfAdmin" id="adminPassword"><br>
+        <button class="Admin-submit" id="adminbtn">LOGIN</button>
+        <p class="privacy-policy">This site is protected by reCAPTCHA and the Google<br><u>Privacy Policy</u> and
+            <u>Terms of Service</u> apply
+        </p>
+    </div>
+
 
 
 
@@ -661,6 +744,34 @@ let logo = document.querySelector("#logo")
     window.location.href = "index.html"
 })
 
+
+const loginAsAdmin = () =>{
+    document.querySelector(".login-Admin").classList.remove("hidden")
+
+   
+}
+
+const Admincross = () =>{
+    document.querySelector(".login-Admin").classList.add("hidden")
+  }
+
+
+  const adminName = document.querySelector("#adminName")
+  const adminPassword = document.querySelector("#adminPassword")
+  const adminBtn = document.querySelector("#adminbtn")
+
+  adminBtn.addEventListener("click", ()=>{
+    if(adminName.value == "admin" && adminPassword.value == "admin"){
+        window.location.href = "admin.html"
+    }
+  })
+
+  let productPage = document.getElementById("new-product-page")
+
+productPage.addEventListener("click", () =>{
+    window.location.href = "product.html"
+})
+  
 
 </script>
 

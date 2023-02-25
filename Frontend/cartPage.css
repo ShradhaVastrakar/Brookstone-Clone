@@ -1,0 +1,27 @@
+
+
+
+.cart-container{
+    width: 70%;
+    border: 2px solid lightgrey;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    text-align: center;
+    
+}
+.cart-container div{
+    padding: 2%;
+    margin-bottom: 9%;
+}
+.cart-container img{
+    width: 80%;
+    border-radius: 5px;
+}
+.cart-container button{
+    height: 5vh;
+    background-color: #61c396;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+}

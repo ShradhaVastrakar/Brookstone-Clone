@@ -1,0 +1,22 @@
+.admin-main-heading{
+    color: teal;
+    text-align: center;
+}
+.main-admin-container{
+   width: 100%; 
+}
+
+.admin-btns{
+    text-align: center;
+    /* border: 1px solid red; */
+}
+#user-btn, #product-btn, #logout-btn{
+    padding: 1%;
+    letter-spacing: 2px;
+    margin-right: 7%;
+    margin-top: 2%;
+    background-color:lightblue;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}

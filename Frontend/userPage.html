@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User-Page</title>
+</head>
+<style>
+    .admin-main-heading{
+    color: teal;
+    text-align: center;
+}
+.main-admin-container{
+   width: 100%; 
+}
+
+.admin-btns{
+    text-align: center;
+    /* border: 1px solid red; */
+}
+#user-btn, #product-btn, #logout-btn{
+    padding: 1%;
+    letter-spacing: 2px;
+    margin-right: 7%;
+    margin-top: 2%;
+    background-color:lightblue;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* *********************USER****************** */
+
+.main-user-container div{
+    padding: 1%;
+    text-align: center;
+    /* border: 1px solid red; */
+    border-radius: 20px;
+    margin: 5%;
+    background-color: whitesmoke;
+}
+
+.main-user-container button{
+    margin-right: 7%;
+    padding: 0.5%;
+    margin-top: 2%;
+    background-color:grey;
+    color:black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+</style>
+<body>
+    <h1 class="admin-main-heading">Welcome, ADMIN</h1>
+    <div class="admin-btns">
+       <button id="user-btn">See all the users</button>
+       <button id="product-btn">See all the Products</button>
+       <button id="logout-btn">Log out</button>
+    </div>
+   
+   
+    <div class="main-user-container">
+     <!-- /////append here////// -->
+    </div>
+</body>
+<script>
+
+    let userContainer = document.querySelector(".main-user-container");
+
+    window.addEventListener("load" , () =>{
+    fetch("http://localhost:8000/users/")
+    .then(response => response.json())
+    .then(actualData => {
+      // Do something with the data
+      console.log(actualData);
+      displayUser(actualData)
+    })
+    .catch(error => {
+      console.error(error);
+    });
+})
+
+
+function displayUser(data) {
+    userContainer.innerHTML = null; 
+    data.forEach((element) => {
+        let card = document.createElement("div");
+
+        let fname = document.createElement("h2");
+        fname.innerText = `FullName - ${element.firstName }  ${element.lastName}`
+       
+        let email = document.createElement("p");
+        email.innerText = `Email - ${element.email}`;
+
+        let pass = document.createElement("p");
+        pass.innerText = `Hashed Password - ${element.pass}`;
+
+        let id = document.createElement("p");
+        id.innerText = `ID -${element._id}`;
+
+        card.append(fname,email,pass,id)
+        userContainer.append(card)
+
+    });
+}
+
+
+let productPage = document.querySelector("#product-btn")
+
+productPage.addEventListener("click", () =>{
+    window.location.href = "allProduct.html"
+})
+
+let logOut = document.querySelector("#logout-btn");
+logOut.addEventListener("click", () =>{
+    window.location.href = "signIn.html"
+})
+
+
+</script>
+</html>

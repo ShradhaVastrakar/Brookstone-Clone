@@ -2,7 +2,6 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
-
 .main-product-container{
     display: flex;
     width: 100%;
@@ -10,7 +9,7 @@
 }
 
 .filter-side{
-    width: 30%;
+    width: 20%;
     padding: 1%;
     border: 2px solid lightgrey;
 }
@@ -21,7 +20,7 @@
 }
 
 .product-apis{
-    width: 70%;
+    width: 80%;
     border: 2px solid lightgrey;
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -66,6 +65,7 @@
 #logo {
     padding-left: 2%;
     width: 20%;
+    cursor: pointer;
 
 }
 

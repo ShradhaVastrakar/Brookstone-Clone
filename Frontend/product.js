@@ -1,5 +1,7 @@
 
 let container = document.querySelector(".product-apis")
+let add = JSON.parse(localStorage.getItem("cart-list"))||[]
+let email_localStorage =localStorage.email;
 let fetchedData = [];
 
 window.addEventListener("load" , () =>{
@@ -17,7 +19,8 @@ window.addEventListener("load" , () =>{
 })
 
 function displayProducts(data){
-    container.innerHTML = null;
+    container.innerHTML = null; 
+    // console.log('data', data)
     data.forEach((element) => {
        let card = document.createElement("div");
        let image = document.createElement("img")
@@ -38,7 +41,20 @@ function displayProducts(data){
        let addtoCart = document.createElement("button");
        addtoCart.innerText = "Add to Cart";
 
+       let email = document.createElement("p");
+       email.innerText = localStorage.email;
 
+    //    paragraph_text = ' '.join(p.text for p in soup.find_all('p'))
+        console.log('email', email_localStorage)
+       addtoCart.addEventListener("click" , () =>{
+        if(!localStorage.token){
+           alert("Please Login First !!")
+        }else{
+            add.push({...element, email: email_localStorage })
+            localStorage.setItem("cart-list",JSON.stringify(add))
+        }
+       
+       })
 
        card.append(image,id,description,rs,price,addtoCart)
        container.append(card)
@@ -68,4 +84,61 @@ const SleepPopup = () => {
 const Sleepleave = () => {
     document.querySelector(".sleep-dropdown").classList.add("hidden");
 }
+
+logo.addEventListener("click", ()=>{
+    window.location.href = "index.html"
+})
+
+let selectedPrice;
+let lower, upper;
+const filterProduct50_100 = document.querySelector('.fityToHund').addEventListener('click', () =>{
+    selectedPrice = '50-100';
+    lower = 50, upper = 100;
+    filterData();
+
+    console.log(selectedPrice)
+});
+const filterProduct100_150 = document.querySelector('.hundToOnefity').addEventListener('click', () =>{
+    selectedPrice = '100-150';
+    lower = 100, upper = 150;
+    filterData();
+    console.log(selectedPrice)
+});
+const filterProduct150_200 = document.querySelector('.oneFiftyToTwoHund').addEventListener('click', () =>{
+    selectedPrice = '150-200';
+    lower = 150, upper = 200;
+    filterData();
+    console.log(selectedPrice)
+});
+const filterProduct200_250 = document.querySelector('.twoHundToTwoFifty').addEventListener('click', () =>{
+    selectedPrice = '200-250';
+
+    lower = 200, upper = 250;
+    filterData();
+    console.log(selectedPrice)
+});
+const filterProduct300_500 = document.querySelector('.ThreeHundToFiveHund').addEventListener('click', () =>{
+    selectedPrice = '300-500';
+    lower = 300, upper = 500;
+    console.log(selectedPrice)
+    filterData();
+});
+const filterProductAbove500 = document.querySelector('.abveFiveHund').addEventListener('click', () =>{
+    selectedPrice = '>500';
+    lower = 500, upper = Infinity;
+    console.log(selectedPrice)
+    filterData();
+});
+console.log(selectedPrice)
+console.log(fetchedData)
+// const filterProduct = fetchedData.filter(elem => elem.)
+
+const filterData = () => {
+    console.log('called')
+    const filterData = fetchedData.filter((elem) => elem.price > lower && elem.price < upper );
+    console.log("filterData"  , filterData)
+    displayProducts(filterData)
+}
+
+
 

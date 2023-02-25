@@ -66,3 +66,10 @@ SignUp_Page.addEventListener("click",()=>{
     }
 
 })
+
+
+let productPage = document.getElementById("new-product-page")
+
+productPage.addEventListener("click", () =>{
+    window.location.href = "product.html"
+})
