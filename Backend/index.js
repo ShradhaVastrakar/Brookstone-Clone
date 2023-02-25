@@ -13,6 +13,8 @@ const {productRouter} = require("./routes/products.routes")
 
 
 
+
+
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'x-www-form-urlencoded, Origin, X-Requested-With, Content-Type, Accept, Authorization, *');
@@ -30,6 +32,7 @@ app.get("/", (req,res)=>{
 })
 
 app.use("/users", userRouter)
+
 app.use("/api", productRouter)
 
 app.listen(process.env.port, async ()=>{

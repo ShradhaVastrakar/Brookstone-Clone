@@ -16,6 +16,8 @@ userRouter.get("/", async(req,res) =>{
     res.send(user)
 })
 
+
+
 userRouter.post("/register" ,async (req,res) => {
 
     const {firstName, lastName, email, pass} = req.body;

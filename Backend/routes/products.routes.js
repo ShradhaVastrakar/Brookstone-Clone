@@ -9,19 +9,26 @@ const multer = require("multer");
 const path = require("path");
 
 
-const storage = multer.diskStorage({
-    destination: (req,file,cb) => {
-     cb(null, `${__dirname}/uploads`)
-    },
-    filename: (req,file,cb) => {
-     cb(null, file.originalname)
-    }
-})
+// const storage = multer.diskStorage({
+//     destination: (req,file,cb) => {
+//      cb(null, `${__dirname}/uploads`)
+//     },
+//     filename: (req,file,cb) => {
+//      cb(null, file.originalname)
+//     }
+// })
 
-const upload = multer({storage : storage})
+// const upload = multer({storage : storage})
 
 
 productRouter.get("/", async (req,res) => {
+    
+    const product = await ProductModel.find();
+    res.send(product)
+
+})
+
+productRouter.get("/products", async (req,res) => {
     
     const product = await ProductModel.find();
     res.send(product)
@@ -38,14 +45,16 @@ productRouter.get("/filter", async (req,res) => {
 
 
 
-productRouter.post("/addProduct" , upload.single("image"), async (req,res) => {
-
-    const product = new ProductModel({
-        id: req.body.id,
-        description : req.body.description,
-        price : req.body.price,
-        image : req.body.image
-    })
+productRouter.post("/addProduct" ,  async (req,res) => {
+    const payload = req.body
+    // const product = new ProductModel({
+    //     id: req.body.id,
+    //     description : req.body.description,
+    //     price : req.body.price,
+    //     image : req.body.image
+        
+    // })
+    const product = new ProductModel(payload)
     await product.save()
 
     res.send("Product created successfully")
