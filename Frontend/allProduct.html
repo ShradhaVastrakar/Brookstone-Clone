@@ -249,7 +249,7 @@
         if (operation.value == "Get") {
             // console.log("1")
             form.innerHTML = `FORM`
-            fetch("http://localhost:8000/api/products")
+            fetch("https://calm-erin-caterpillar-shoe.cyclic.app/api/products")
                 .then((res) => {
                     // console.log(1);
                     return res.json();
@@ -286,7 +286,7 @@
             submitPost.addEventListener("click", (e) => {
                 alert("New Product is added")
                 e.preventDefault();
-                fetch("http://localhost:8000/api/addProduct",
+                fetch("https://calm-erin-caterpillar-shoe.cyclic.app/api/addProduct",
                     {
                         method: "POST",
                         headers: {
@@ -325,7 +325,7 @@
 
             submitPatch.addEventListener(("click"), (e) => {
                 e.preventDefault();
-                fetch(`http://localhost:8000/api/update/${inputID.value}`,
+                fetch(`https://calm-erin-caterpillar-shoe.cyclic.app/api/update/${inputID.value}`,
                     {
                         method: "PATCH",
                         mode: 'cors',
@@ -370,7 +370,7 @@
             submitPut.addEventListener("click", (e) => {
                 alert("Product has been updated")
                 e.preventDefault();
-                let promise = fetch(`http://localhost:8000/api/updateput/${inputID.value}`,
+                let promise = fetch(`https://calm-erin-caterpillar-shoe.cyclic.app/api/updateput/${inputID.value}`,
                     {
                         method: "PUT",
                         headers: {
@@ -402,7 +402,7 @@
             submitDelete.addEventListener(("click"), (e) => {
                 alert("Product has been Deleted!")
                 e.preventDefault();
-                let promise = fetch(`http://localhost:8000/api/delete/${inputID.value}`,
+                let promise = fetch(`https://calm-erin-caterpillar-shoe.cyclic.app/api/delete/${inputID.value}`,
                     {
                         method: "DELETE",
                         headers: {

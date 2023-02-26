@@ -5,7 +5,7 @@ let email_localStorage =localStorage.email;
 let fetchedData = [];
 
 window.addEventListener("load" , () =>{
-    fetch("http://localhost:8000/api/")
+    fetch("https://calm-erin-caterpillar-shoe.cyclic.app/api/")
     .then(response => response.json())
     .then(actualData => {
       // Do something with the data
@@ -155,6 +155,7 @@ let cartIcon = document.getElementById("cart-icon")
 cartIcon.addEventListener("click", () =>{
     window.location.href = "cartPage.html"
 })
+
 
 
 

@@ -288,3 +288,25 @@
 .hidden {
     display: none;
 }
+
+
+@media screen and (min-width:490px) and (max-width : 810px){
+    .product-apis{
+        width: 80%;
+        border: 2px solid lightgrey;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        text-align: center;
+        
+    }
+}
+@media screen and (min-width:200px) and (max-width : 490px){
+    .product-apis{
+        width: 80%;
+        border: 2px solid lightgrey;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        text-align: center;
+        
+    }
+}
