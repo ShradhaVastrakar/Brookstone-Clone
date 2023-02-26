@@ -34,6 +34,7 @@
     }
 
     #logo {
+        cursor: pointer;
         padding-left: 2%;
         width: 20%;
 
@@ -351,7 +352,7 @@
     background-color: whitesmoke;
     border: 1px sold lightgray;
     height: 80vh;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 
@@ -607,7 +608,7 @@ padding-top: 5%;
             </div>
         </div>
     </div>
-  
+
     <div class="login-Admin hidden">
         <div class="login-as-admin-heading">LOG-IN AS ADMIN</div>
         <p class="cross-admin" onClick={Admincross()}>x</p>
@@ -772,6 +773,12 @@ productPage.addEventListener("click", () =>{
     window.location.href = "product.html"
 })
   
+
+let cartIcon = document.getElementById("cart-icon")
+
+cartIcon.addEventListener("click", () =>{
+    window.location.href = "cartPage.html"
+})
 
 </script>
 

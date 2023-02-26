@@ -73,3 +73,9 @@ let productPage = document.getElementById("new-product-page")
 productPage.addEventListener("click", () =>{
     window.location.href = "product.html"
 })
+
+let cartIcon = document.getElementById("cart-icon")
+
+cartIcon.addEventListener("click", () =>{
+    window.location.href = "cartPage.html"
+})

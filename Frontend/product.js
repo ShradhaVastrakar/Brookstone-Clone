@@ -32,11 +32,9 @@ function displayProducts(data){
        let description = document.createElement("h3");
        description.innerText = element.description;
 
-       let rs = document.createElement("p")
-       rs.innerText = "Rs."
-
+  
        let price = document.createElement("h2");
-       price.innerText = element.price;
+       price.innerText = `Rs. ${element.price}`;
 
        let addtoCart = document.createElement("button");
        addtoCart.innerText = "Add to Cart";
@@ -56,7 +54,7 @@ function displayProducts(data){
        
        })
 
-       card.append(image,id,description,rs,price,addtoCart)
+       card.append(image,id,description,price,addtoCart)
        container.append(card)
     });
   }

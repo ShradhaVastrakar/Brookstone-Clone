@@ -1,6 +1,177 @@
+/* *******************************NAVBAR*************************************** */
+*{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
 
+.navbar{
+    /* position: fixed; */
+    width: 100%;
+   
+}
+.nav-searchbar{
+    /* position: fixed; */
 
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 3px 5px 4px;
+    background-color: whitesmoke;
+   
+    
+}
+#logo{
+    cursor: pointer;
+padding-left:2%;
+width: 20%;
 
+}
+#logo-image{
+    height: 8vh;
+}
+.search{
+    width: 50%;
+    display: flex;
+    /* border: 1px solid red; */
+}
+#search-input{
+    height:60%;
+    width: 90%;
+    padding: 0px 0px 0px 10px;
+    margin-top: 2%;
+    border-radius: 6px;
+    border: 2px solid lightgrey;
+    outline: none;
+}
+#search-icon{
+    height: 10%;
+}
+.cart-login{
+   
+    display: flex;
+    justify-content:right;
+    cursor: pointer;
+    width: 20%;
+    /* border: 1px solid red; */
+}
+.icon-search{
+    width: 2%;
+    height: 50px;
+    /* border: 1px solid red; */
+}
+#search-icon{
+    height: 40%;
+    margin-left: -410%;
+    margin-top: 81%;
+}
+#user-icon, #favorite-icon, #cart-icon{
+    height: 4vh;
+    margin-right: 3%;
+    margin-top: 5%;
+}
+
+.drop-downs{
+    z-index: 2;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 2% 0px 2%;
+    padding-bottom: 2%;
+    /* border: 1px solid red; */
+    cursor: pointer;
+}
+
+.drop-downs p:hover{
+  text-decoration:underline
+}
+
+.massage-dropdown{
+    display: flex;
+    z-index: 4;
+    position: absolute;
+    margin-top: 8%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.wellness-dropdown{
+    width: 100%;
+    z-index: 4;
+    display: flex;
+    position: absolute;
+    margin-top: 8%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.sleep-dropdown{
+    width: 100%;
+    z-index: 4;
+    display: flex;
+    position: absolute;
+    margin-top: 8%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+}
+.list1{
+    width: 60%;
+    display: flex;
+
+}
+.list2{
+    width: 40%;
+    display: flex;
+
+}
+
+#massage-img, #foot-image{
+    margin-top: 6%;
+    width: 90%;
+}
+
+#massage-chairs, #massage-guns, #neck-back, #best-sellers{
+    margin-top: 5%;
+    margin-left: 8%;
+}
+.hidden{
+    display: none;
+}
+
+.main-body{
+    width: 100%;
+    display: flex;
+    margin-bottom: 3%;
+}
+.wakeup-slider{
+    padding-top: 8%;
+    z-index: -1;
+ 
+    /* border: 1px solid red; */
+    width: 60%;
+}
+.wakeup-slider img{
+    margin-top: 0.7%;
+    cursor: pointer;
+    width: 100%;
+}
+.image-grid{
+    padding-top: 8%;
+    display: grid;
+    padding-left: 1%;
+    column-gap: 2%;
+    grid-template-columns: repeat(2,1fr);
+    /* border: 1px solid blue; */
+    width: 40%;
+}
+.image-grid img{
+    width: 100%;
+}
+.item1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+   
+}
+.image-grid{
+    margin-top: 1%;
+}
+
+/* ***************************Body contenet************************* */
 .cart-container{
     width: 70%;
     border: 2px solid lightgrey;
@@ -24,4 +195,50 @@
     border-radius: 10px;
     cursor: pointer;
     border: none;
+}
+
+
+/* ******************************FOOTER*************************** */
+
+.footer{
+    /* border: 2px solid red; */
+    width: 90%;
+    display: flex;
+    background-color: #50514f;
+    color: white;
+    padding: 5%;
+    padding-top: 10%;
+    z-index: -1;
+
+}
+
+.customer-service{
+    display: flex;
+}
+
+#shop-now-image{
+    width: 70%;
+    margin-left: 20%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#sign-up-now-footer {
+    /* border: 1px solid red; */
+    height: 5vh;
+    width: 90%;
+    background-color: #65c297;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    text-align: center;
+    padding-top: 5%;
+    cursor: pointer;
+}
+#contact-footer{
+    margin-left: 20%;
+    padding-top: 5%;
+}
+
+#faq{
+    margin-left: 25%;
+    padding-top: 5%;
 }

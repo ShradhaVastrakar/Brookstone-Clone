@@ -38,7 +38,7 @@
     /* ****************product************************* */
 
     .main-product-container {
-        border: 1px solid red;
+        /* border: 1px solid red; */
         width: 100%;
     }
 
@@ -80,7 +80,7 @@
     #form {
 
         color: teal;
-        width: 50%;
+        width: 40%;
         padding: 2.5%;
 
     }
@@ -137,11 +137,12 @@
 
     td,
     th {
-        padding: 1%;
+        padding: 2%;
+        /* border: 2px solid green; */
     }
 
     #main-ID {
-
+    /* border: 1px solid blue; */
         padding: 0px 8px;
     }
 
@@ -158,7 +159,7 @@
     }
 
     select {
-        background-color: cyan;
+        background-color: lightblue;
 
     }
 
@@ -175,6 +176,16 @@
         cursor: pointer;
         margin-left: 30%;
     }
+
+    .cont-image {
+        width: 60%;
+    }
+  .container-id{
+    width: 30%;
+  }
+  .container-image{
+    width: 20%;
+  }
 </style>
 
 <body>
@@ -189,10 +200,10 @@
     <div class="main-product-container">
 
         <select name="forms" id="operation">
+            <option>OPTIONS</option>
             <option value="Get">GET</option>
             <option value="Post">POST</option>
             <option value="Put">PUT</option>
-            <option value="Patch">PATCH</option>
             <option value="Delete">DELETE</option>
         </select>
 
@@ -226,59 +237,233 @@
     })
 
     let form = document.getElementById("form");
-
+    let container = document.getElementById("tbody");
     let operation = document.querySelector("#operation");
-    console.log(operation.value)
+
+    operation.addEventListener("change", () => {
+        console.log(operation.value)
+    })
+
 
     operation.addEventListener("change", function () {
-        if (operation.value === "Get") {
+        if (operation.value == "Get") {
+            // console.log("1")
             form.innerHTML = `FORM`
-            lfetch("http://localhost:8000/api/products")
-            .then((res) => {
-                // console.log(1);
-                res.json();
-            })
+            fetch("http://localhost:8000/api/products")
+                .then((res) => {
+                    // console.log(1);
+                    return res.json();
+                })
                 .then((response) => {
                     console.log(response)
                     // console.log(2,3,response);
                     renderProducts(response);
+
                 })
+                .catch((err) => {
+                    console.log(err)
+                })
+        }
+
+        else if (operation.value === "Post") {
+            form.innerHTML = `<form action="" class="PostForm">
+        <label class="labelid">Enter ID</label><br>
+        <input type="number" placeholder="Enter your ID" id="inputID"><br>
+        <label class="labelImage">Enter Image URL</label><br>
+        <input type="text" placeholder="Enter Image URL" id="ImageInput"><br>
+        <label class="labelDesc">Enter Description</label><br>
+        <input type="text" placeholder="Description" id="Description"><br>
+        <label class="labelPrice">Enter Price</label><br>
+        <input type="text" placeholder="Enter price" id="priceInput"><br>
+        <button class="submitPost" id="submitPost">Submit</button>
+     </form>`
+            let submitPost = document.getElementById("submitPost");
+            let inputID = document.getElementById("inputID")
+            let ImageInput = document.getElementById("ImageInput")
+            let Description = document.getElementById("Description")
+            let priceInput = document.getElementById("priceInput")
+
+            submitPost.addEventListener("click", (e) => {
+                alert("New Product is added")
+                e.preventDefault();
+                fetch("http://localhost:8000/api/addProduct",
+                    {
+                        method: "POST",
+                        headers: {
+                            "content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            id: inputID.value,
+                            image: ImageInput.value,
+                            description: Description.value,
+                            price: priceInput.value
+                        })
+                    })
+                    .then((res) => {
+                        return res.json();
+                    })
+                    .then((data) => {
+                        console.log(data);
+                        
+                    })
+                    .catch((err) => {
+                        console.log(err)
+                    })
+                form.innerHTML = null;
+            })
+        }
+        else if (operation.value === "Patch") {
+            form.innerHTML = `<form action="" class="PostForm">
+        <label class="labelid">Enter ID</label><br>
+        <input type="text" placeholder="Enter your ID" id="inputID"><br>
+        <label class="labelPrice">Enter Price</label><br>
+        <input type="number" placeholder="Enter price" id="priceInput"><br>
+        <button class="submitPost" id="submitPatch">Update</button>
+        </form>`
+            let priceInput = document.querySelector("#priceInput")
+            let inputID = document.querySelector("#inputID")
+
+            submitPatch.addEventListener(("click"), (e) => {
+                e.preventDefault();
+                fetch(`http://localhost:8000/api/update/${inputID.value}`,
+                    {
+                        method: "PATCH",
+                        mode: 'cors',
+                        headers: {
+                            "content-Type": "application/json",
+                            'Access-Control-Allow-Origin': '*'
+                        },
+                        body: JSON.stringify({
+
+                            price: priceInput.value
+                        })
+                    })
+                    .then((res) => {
+                        return res.json()
+                    })
+                    .then((data) => {
+                        console.log(data)
+                    })
+                    .catch((err) => {
+                        console.log(err)
+                    })
+                form.innerHTML = null;
+            })
+        }
+
+        else if (operation.value === "Put") {
+            form.innerHTML = `<form action="" class="PutForm">
+        <label class="labelid">Enter ID</label><br>
+        <input type="text" placeholder="Enter your ID" id="inputID"><br>
+        <label class="labelImage">Enter Image URL</label><br>
+        <input type="text" placeholder="Enter Image URL" id="ImageInput"><br>
+        <label class="labelDesc">Enter Description</label><br>
+        <input type="text" placeholder="Description" id="Description"><br>
+        <label class="labelPrice">Enter Price</label><br>
+        <input type="text" placeholder="Enter price" id="priceInput"><br>
+        <button class="submitPost" id="submitPut">Submit</button>
+     </form>`;
+            let inputID = document.getElementById("inputID")
+            let ImageInput = document.getElementById("ImageInput")
+            let Description = document.getElementById("Description")
+            let priceInput = document.getElementById("priceInput")
+            submitPut.addEventListener("click", (e) => {
+                alert("Product has been updated")
+                e.preventDefault();
+                let promise = fetch(`http://localhost:8000/api/updateput/${inputID.value}`,
+                    {
+                        method: "PUT",
+                        headers: {
+                            "content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            image: ImageInput.value,
+                            description: Description.value,
+                            price: priceInput.value
+                        })
+                    })
+                promise.then((res) => {
+                    return res.json();
+                })
+                    .then((data) => {
+                        console.log(data);
+                        
+                    })
+                form.innerHTML = null;
+            })
+        }
+        else if (operation.value === "Delete") {
+            form.innerHTML = `<form action="" class="PutForm">
+        <label class="labelid">Enter ID</label><br>
+        <input type="text" placeholder="Enter your ID" id="inputID"><br>
+        <button class="submitPost" id="submitDelete">Delete</button>
+        </form>`
+            let inputID = document.querySelector("#inputID")
+            submitDelete.addEventListener(("click"), (e) => {
+                alert("Product has been Deleted!")
+                e.preventDefault();
+                let promise = fetch(`http://localhost:8000/api/delete/${inputID.value}`,
+                    {
+                        method: "DELETE",
+                        headers: {
+                            "content-Type": "application/json",
+                        }
+                    })
+                promise.then((res) => {
+                    return res.json();
+                })
+                    .then((data) => {
+                        console.log(data);
+                        
+                    })
+                form.innerHTML = null;
+            })
         }
     })
 
-
     // window.addEventListener("load", () => {
     //     fetch("http://localhost:8000/api/products")
-    //         .then((res) => res.json())
+    //         .then((res) => {
+    //              return res.json()
+    //             })
     //         .then((actualData) => {
     //             // Do something with the data
     //             console.log(actualData);
-    //             //   displayProducts(actualData)
+    //             renderProducts(response)
     //         })
     //         .catch(error => {
     //             console.log(error);
     //         });
     // })
 
-    
-function renderProducts(fullData) {
-    container.innerHTML = null;
-    fullData.map((item) => {
-        let tr = document.createElement("tr");
-        tr.setAttribute("class","tr")
-        // tr.style.border = "1px solid grey"
-        let id = document.createElement("td");
-        id.innerText = item.id;
-        let image = document.createElement("td");
-        image.innerHTML = `<img src=${item.Image}>`;
-        let desc = document.createElement("td");
-        desc.innerText = item.Description;
-        let price = document.createElement("td");
-        price.innerText = item.price;
-        tr.append(id,image, desc, price)
-        container.append(tr);
-    })
-}
+
+    function renderProducts(fullData) {
+        container.innerHTML = null;
+        fullData.forEach((element) => {
+
+            let tr = document.createElement("tr");
+            tr.setAttribute("class", "tr")
+            // tr.style.border = "1px solid grey"
+
+            let id = document.createElement("td");
+            id.innerText = `${element._id}`;
+            id.setAttribute("class", "container-id")
+
+            let image = document.createElement("td");
+            image.innerHTML = `<img src=${element.image} class="cont-image">`;
+
+
+            let desc = document.createElement("td");
+            desc.innerText = element.description;
+
+            let price = document.createElement("td");
+            price.innerText = `Rs. ${element.price}`;
+            price.setAttribute("class","container-image")
+
+            tr.append(id, image, desc, price)
+            container.append(tr);
+        })
+    }
 
 </script>
 
