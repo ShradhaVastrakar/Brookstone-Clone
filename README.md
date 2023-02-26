@@ -44,3 +44,12 @@ Worked on the product page of the website, Created API using mongoDB and fetch t
 
 ![Screenshot (99)](https://user-images.githubusercontent.com/115460277/221236992-b60899ff-fb65-4678-b9f9-cc539866f68c.png)
 
+DAY-5 ---
+
+Worked on the Cart, Checkout and Admin page, and the Admin can do all the crud operation from frontend.
+
+![Screenshot (100)](https://user-images.githubusercontent.com/115460277/221404658-6a9a70c4-4aee-41cf-a8cf-2bc8ecbd7a58.png)
+![Screenshot (101)](https://user-images.githubusercontent.com/115460277/221404659-cffe701d-19c9-4fdd-8c62-d98a50cb49da.png)
+
+![Screenshot (102)](https://user-images.githubusercontent.com/115460277/221404665-4dc0c606-20ab-4747-b3b5-0250424efdec.png)
+![Screenshot (103)](https://user-images.githubusercontent.com/115460277/221404670-ae2fe986-dbbb-48ea-a0fc-80616af57155.png)
