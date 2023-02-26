@@ -64,7 +64,6 @@ SignUp_Page.addEventListener("click",()=>{
     }else{
         window.location.href = "signIn.html";
     }
-
 })
 
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckOut Page</title>
+</head>
+<style>
+#checkout-heading{
+    text-align: center;
+    padding: 1%;
+    margin-top: 5%;
+}
+#debit, #cvv, #expiry, #address{
+    width: 35%;
+    padding: 1%;
+    margin-left: 30%;
+    outline: none;
+    margin-bottom: 2%;
+    border: 2px solid lightgray;
+}
+
+#checkout-submit-btn{
+    width: 15%;
+    padding: 1%;
+    margin-left: 40%;
+    background-color: teal;
+    border-radius: 10px;
+    outline: none;
+    margin-bottom: 2%;
+    border: 2px solid lightgray;
+    cursor: pointer;
+}
+</style>
+<body>
+    <div class="checkout-page">
+        <h1 id="checkout-heading">Enter your Card Details to Proceed...</h1>
+        <input type="text" id="debit" placeholder="Enter your Debit Card Details"><br>
+        <input type="text" id="cvv" placeholder="Enter your CVV"><br>
+        <input type="text" id="expiry" placeholder="Enter card Expiry date"><br>
+        <input type="text" id="address" placeholder="Enter your Address"><br>
+        <button id="checkout-submit-btn">Submit</button>
+    </div>
+</body>
+<script>
+let checkoutBtn = document.getElementById("checkout-submit-btn")
+checkoutBtn.addEventListener("click", () =>{
+alert("Thank you, Your order has been placed")
+window.location.href = "index.html"
+})
+
+</script>
+</html>

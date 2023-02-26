@@ -48,6 +48,7 @@ function displayProducts(data){
         if(!localStorage.token){
            alert("Please Login First !!")
         }else{
+            alert("Added to the Cart")
             add.push({...element, email: email_localStorage })
             localStorage.setItem("cart-list",JSON.stringify(add))
         }
@@ -137,6 +138,23 @@ const filterData = () => {
     console.log("filterData"  , filterData)
     displayProducts(filterData)
 }
+
+let SignUp_Page = document.getElementById("user-icon");
+SignUp_Page.addEventListener("click",()=>{
+
+    if(localStorage.getItem("isLogin")){
+        window.location.href = "account.html"
+    }else{
+        window.location.href = "signIn.html";
+    }
+})
+
+
+let cartIcon = document.getElementById("cart-icon")
+
+cartIcon.addEventListener("click", () =>{
+    window.location.href = "cartPage.html"
+})
 
 
 

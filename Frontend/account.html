@@ -34,6 +34,7 @@
     }
 
     #logo {
+        cursor: pointer;
         padding-left: 2%;
         width: 20%;
 
@@ -481,8 +482,7 @@
                 <p id="appended-email"></p>
                 <p>India</p>
             </div>
-            <p>Your orders</p>
-            <p>You have no orders at this time.</p>
+         
         </div>
     </div>
 
@@ -573,6 +573,12 @@ let productPage = document.getElementById("new-product-page")
 
 productPage.addEventListener("click", () =>{
     window.location.href = "product.html"
+})
+
+let cartIcon = document.getElementById("cart-icon")
+
+cartIcon.addEventListener("click", () =>{
+    window.location.href = "cartPage.html"
 })
 
 </script>
