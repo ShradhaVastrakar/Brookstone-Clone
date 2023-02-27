@@ -22,13 +22,17 @@ WORKED ON THE LANDING PAGE OF THE WEBSITE THAT INCLUDES, NAVBAR, BODY CONTENT, A
 
 DAY-2---
 
-Worked on Login/SignUp page and same on the Frontend
+Worked on Login/SignUp page and same on the Frontend,
+User can register themselves by entering their name, email and password.
+
+After registering themselves the user can login themselves and start shopping.
 
 ![Screenshot (92)](https://user-images.githubusercontent.com/115460277/220729559-1e210cd0-2162-4df9-a185-7203d918c6e9.png)
 
 DAY-3---
 
 Worked on the Backend Register / login /logout / account page
+
 
 
 ![Screenshot (95)](https://user-images.githubusercontent.com/115460277/220998459-6aba0344-773c-45db-811f-2cc9b38a3dfc.png)
@@ -41,6 +45,14 @@ Worked on the Backend Register / login /logout / account page
 DAY-4----
 
 Worked on the product page of the website, Created API using mongoDB and fetch the same to frontend.
+In backend products can be added, updated as well as deleted.
+
+following are the end points for the crud operation on products---
+
+https://calm-erin-caterpillar-shoe.cyclic.app/api/products
+https://calm-erin-caterpillar-shoe.cyclic.app/api/addProduct
+https://calm-erin-caterpillar-shoe.cyclic.app/api/update/id
+https://calm-erin-caterpillar-shoe.cyclic.app/api/delete/id
 
 ![Screenshot (99)](https://user-images.githubusercontent.com/115460277/221236992-b60899ff-fb65-4678-b9f9-cc539866f68c.png)
 
