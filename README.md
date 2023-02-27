@@ -17,7 +17,7 @@ MONGOOSE,<br>
 https://celebrated-empanada-7883b0.netlify.app/index.html
 
 
-DAY-1---
+DAY-1--- <h2>Landing Page</h2>
 
 WORKED ON THE LANDING PAGE OF THE WEBSITE THAT INCLUDES, NAVBAR, BODY CONTENT, AND FOOTER.
 
@@ -25,7 +25,7 @@ WORKED ON THE LANDING PAGE OF THE WEBSITE THAT INCLUDES, NAVBAR, BODY CONTENT, A
 ![Screenshot (89)](https://user-images.githubusercontent.com/115460277/220543295-d8a96523-c5ac-4368-b6f5-27618e2eca49.png)
 ![Screenshot (91)](https://user-images.githubusercontent.com/115460277/220543536-7693cc00-c202-4805-b882-b6feaa0421d3.png)
 
-DAY-2---
+DAY-2---<h2>Sin-Up Page</h2>
 
 Worked on Login/SignUp page and same on the Frontend,
 User can register themselves by entering their name, email and password.
@@ -34,7 +34,7 @@ After registering themselves the user can login themselves and start shopping.
 
 ![Screenshot (92)](https://user-images.githubusercontent.com/115460277/220729559-1e210cd0-2162-4df9-a185-7203d918c6e9.png)
 
-DAY-3---
+DAY-3---<h2>Account Page</h2>
 
 Worked on the Backend Register / login /logout / account page
 
@@ -47,7 +47,7 @@ Worked on the Backend Register / login /logout / account page
 
 
 
-DAY-4----
+DAY-4----<h2>Product Page</h2>
 
 Worked on the product page of the website, Created API using mongoDB and fetch the same to frontend.
 In backend products can be added, updated as well as deleted.
@@ -61,7 +61,7 @@ https://calm-erin-caterpillar-shoe.cyclic.app/api/delete/id<br>
 
 ![Screenshot (99)](https://user-images.githubusercontent.com/115460277/221236992-b60899ff-fb65-4678-b9f9-cc539866f68c.png)
 
-DAY-5 ---
+DAY-5 ---<h2>Admin page</h2>
 
 Worked on the Cart, Checkout and Admin page, and the Admin can do all the crud operation from frontend.
 
