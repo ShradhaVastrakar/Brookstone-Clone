@@ -25,7 +25,7 @@ WORKED ON THE LANDING PAGE OF THE WEBSITE THAT INCLUDES, NAVBAR, BODY CONTENT, A
 ![Screenshot (89)](https://user-images.githubusercontent.com/115460277/220543295-d8a96523-c5ac-4368-b6f5-27618e2eca49.png)
 ![Screenshot (91)](https://user-images.githubusercontent.com/115460277/220543536-7693cc00-c202-4805-b882-b6feaa0421d3.png)
 
-DAY-2---<h2>Sin-Up Page</h2>
+DAY-2---<h2>Sign-Up Page</h2>
 
 Worked on Login/SignUp page and same on the Frontend,
 User can register themselves by entering their name, email and password.
