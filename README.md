@@ -49,7 +49,7 @@ In backend products can be added, updated as well as deleted.
 
 following are the end points for the crud operation on products---
 
-https://calm-erin-caterpillar-shoe.cyclic.app/api/products
+https://calm-erin-caterpillar-shoe.cyclic.app/api/products<br>
 https://calm-erin-caterpillar-shoe.cyclic.app/api/addProduct
 https://calm-erin-caterpillar-shoe.cyclic.app/api/update/id
 https://calm-erin-caterpillar-shoe.cyclic.app/api/delete/id
